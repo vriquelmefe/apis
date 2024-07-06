@@ -41,9 +41,9 @@ async function calculandoCambio(event) {
     const cantidad = parseFloat(cantidadCambio.value);
 
     if(valorSeleccionado in valoresDeCambio) {
-        const valorAEvaluar = parseFloat(valoresDeCambio[valorSeleccionado].valor);
-        console.log('valorAEvaluar', valoresDeCambio[valorSeleccionado]);
-        const cambio = (cantidad * valorAEvaluar).toFixed(2);
+        const valorAEvaluar = (valoresDeCambio[valorSeleccionado].valor);
+        console.log('valorAEvaluar', valorAEvaluar);
+        const cambio = (cantidad / valorAEvaluar).toFixed(2);
 
         resultado.innerHTML = `<p class="text-light display-6">Resultado: $ ${cambio}</p>`;
         renderizarGrafico()
